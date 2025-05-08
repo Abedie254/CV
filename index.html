@@ -1,0 +1,140 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Abednego Thuranira - CV</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      color: #333;
+    }
+    .cv-container {
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  .profile-pic {
+    width: 100px; /* Adjusted width */
+    height: 100px; /* Adjusted height */
+    border-radius: 50%; /* A perfect circle for the profile picture */
+    margin: 12px auto; /* Centers the profile picture */
+    display: block;
+    object-fit: cover; /* Ensures the image covers the area without distorting */
+}
+
+@media print {
+    .profile-pic {
+        display: none; /* Hides the profile picture in the print view */
+    }
+}
+    h1 {
+      color: darkblue;
+    }
+    h2 {
+      color: #444;
+      margin-top: 30px;
+    }
+    p, li {
+      line-height: 1.6;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: darkblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: navy;
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-container" id="cv">
+    <h1>Abednego Thuranira Kaume</h1>
+    <p><strong>Email:</strong> abednegokaume@gmail.com</p>
+    <p><strong>Phone:</strong> 0742600965</p>
+    <p><strong>Location:</strong> Roysambu, Nairobi</p>
+    <img src="https://i.postimg.cc/brt8bqh1/IMG-20230304-112319-3-2.jpg0" alt="Profile Picture" class="profile-pic">
+
+    <h2>Profile</h2>
+    <p>I am currently a student at Laikipia University, third year pursuing Computer Science. I am an aspiring web developer. I am also very good in Python and have strong basics in Java. I also have very strong skills in Database Management Systems.</p>
+
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML & CSS</li>
+      <li>Python</li>
+      <li>Java (Basics)</li>
+      <li>Responsive Web Design</li>
+      <li>Database Management Systems</li>
+      <li>Mobile App Development</li>
+    </ul>
+
+    <h2>Education</h2>
+    <p><strong>Laikipia University</strong><br>Bachelor's Degree (Ongoing)</p>
+    <p><strong>Kanjoo Mixed Day Secondary School</strong><br>KCSE - Graduated [2019]</p>
+    <p><strong>Nkiri NAC Academy</strong><br>KCPE - Graduated [2013]</p>
+
+    <h2>Projects</h2>
+    <ul>
+      <li>Lost and Found Items Tracking Tool (Offline)</li>
+      <li>Brainspark - AI-powered academic assistant (Offline)</li>
+      <li>Smart BMI Device - Under development, seeking sponsorship</li>
+      <li><a href="https://samcafe-ce959.web.app/" target="_blank">SamCafe Website (Live)</a></li>
+      <li><a href="https://rental-app-n5dp.onrender.com/tenant/login" target="_blank">Tenant Login page Rental app(Live on Render)</a></li>
+      <li><a href="https://rental-app-n5dp.onrender.com" target="_blank">Admin Login page Rental App(Live on Render)</a></li>
+    </ul>
+
+    <h2>Work & Volunteering Experience</h2>
+    <ul>
+      <li>Health Week Volunteer – Laikipia University, Triage Section – Developed BMI calculator using Python</li>
+      <li>Waiter at Kwa Sam Cafe – Assisted while also developing their website</li>
+    </ul>
+
+    <h2>Certifications & Awards</h2>
+    <ul>
+      <li>Best in Computer Studies – Kanjoo Secondary School</li>
+      <li>Best Student – Nkiri NAC Academy</li>
+      <li>Huawei Certification – Completed ICT course at Laikipia University</li>
+    </ul>
+
+    <h2>Industrial Attachment</h2>
+    <p>Starting May 2025, I will begin a 3-month industrial attachment at Systech Limited to gain practical experience in software development and IT support.</p>
+    <h2>References</h2>
+    <p>Available upon request</p>
+  </div>
+
+  <button id="download">Download CV as PDF</button>
+
+  <
+<p id="status" style="margin-top: 10px; color: green;"></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<script>
+  document.getElementById("download").addEventListener("click", () => {
+    const status = document.getElementById("status");
+    status.textContent = "Downloading...";
+
+    const element = document.getElementById("cv");
+    html2pdf()
+      .from(element)
+      .save("Abednego_Thuranira_CV.pdf")
+      .then(() => {
+        status.textContent = "Download complete!";
+      })
+      .catch(() => {
+        status.textContent = "Download failed. Please try again.";
+        status.style.color = "red";
+      });
+  });
+</script>
+</body>
+</html>
